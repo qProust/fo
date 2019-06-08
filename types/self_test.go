@@ -12,12 +12,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 
-	. "github.com/albrow/fo/types"
+	. "github.com/qProust/fo/types"
 )
 
 var benchmark = flag.Bool("b", false, "run benchmarks")
@@ -30,7 +30,7 @@ func TestSelf(t *testing.T) {
 	}
 
 	conf := Config{Importer: importer.Default()}
-	_, err = conf.Check("github.com/albrow/fo/types", fset, files, nil)
+	_, err = conf.Check("github.com/qProust/fo/types", fset, files, nil)
 	if err != nil {
 		// Importing go/constant doesn't work in the
 		// build dashboard environment. Don't report an error

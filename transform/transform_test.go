@@ -5,12 +5,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/format"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
-	"github.com/albrow/fo/types"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/format"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
+	"github.com/qProust/fo/types"
 	"github.com/aryann/difflib"
 )
 
@@ -760,7 +760,7 @@ func TestTransformImportGo(t *testing.T) {
 	src := `package main
 
 import (
-	"github.com/albrow/fo/ast"
+	"github.com/qProust/fo/ast"
 )
 
 type List[T] []T
@@ -798,7 +798,7 @@ func main() {
 	expected := `package main
 
 import (
-	"github.com/albrow/fo/ast"
+	"github.com/qProust/fo/ast"
 )
 
 type (

@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 // SortImports sorts runs of consecutive import lines in import blocks in f.

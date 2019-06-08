@@ -14,7 +14,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 // TODO(gri) Provide scopes with a name or other mechanism so that

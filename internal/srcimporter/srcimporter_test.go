@@ -14,9 +14,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/albrow/fo/internal/testenv"
-	"github.com/albrow/fo/token"
-	"github.com/albrow/fo/types"
+	"github.com/qProust/fo/internal/testenv"
+	"github.com/qProust/fo/token"
+	"github.com/qProust/fo/types"
 )
 
 const maxTime = 2 * time.Second

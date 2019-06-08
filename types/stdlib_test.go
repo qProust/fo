@@ -19,14 +19,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/internal/testenv"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/scanner"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/internal/testenv"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/scanner"
+	"github.com/qProust/fo/token"
 
-	. "github.com/albrow/fo/types"
+	. "github.com/qProust/fo/types"
 )
 
 var (

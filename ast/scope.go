@@ -11,7 +11,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 // A Scope maintains the set of named language entities declared

@@ -11,10 +11,10 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/printer"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/printer"
+	"github.com/qProust/fo/token"
 )
 
 var config = printer.Config{Mode: printer.UseSpaces | printer.TabIndent, Tabwidth: 8}

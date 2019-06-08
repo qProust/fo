@@ -11,8 +11,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/token"
 )
 
 // AddImport adds the import path to the file f, if absent.

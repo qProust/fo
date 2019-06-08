@@ -11,10 +11,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/printer"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/printer"
+	"github.com/qProust/fo/token"
 )
 
 // Dummy test function so that godoc does not use the entire file as example.

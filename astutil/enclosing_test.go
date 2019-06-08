@@ -16,11 +16,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/astutil"
-	"github.com/albrow/fo/parser"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/astutil"
+	"github.com/qProust/fo/parser"
 )
 
 // pathToString returns a string containing the concrete types of the

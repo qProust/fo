@@ -12,7 +12,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/albrow/fo/internal/testenv"
+	"github.com/qProust/fo/internal/testenv"
 )
 
 func TestFor(t *testing.T) {

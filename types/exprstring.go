@@ -10,7 +10,7 @@ package types
 import (
 	"bytes"
 
-	"github.com/albrow/fo/ast"
+	"github.com/qProust/fo/ast"
 )
 
 // ExprString returns the (possibly shortened) string representation for x.

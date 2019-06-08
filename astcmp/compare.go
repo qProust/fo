@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/albrow/fo/ast"
+	"github.com/qProust/fo/ast"
 )
 
 // A Mode value is a set of flags (or 0). They control how nodes are compared.

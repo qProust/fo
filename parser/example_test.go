@@ -8,8 +8,8 @@ package parser_test
 import (
 	"fmt"
 
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 )
 
 func ExampleParseFile() {

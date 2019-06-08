@@ -15,8 +15,8 @@ import (
 	"text/tabwriter"
 	"unicode"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/token"
 )
 
 const (
@@ -107,7 +107,7 @@ func (p *printer) internalError(msg ...interface{}) {
 	if debug {
 		fmt.Print(p.pos.String() + ": ")
 		fmt.Println(msg...)
-		panic("github.com/albrow/fo/printer")
+		panic("github.com/qProust/fo/printer")
 	}
 }
 

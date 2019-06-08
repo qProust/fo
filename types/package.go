@@ -8,7 +8,7 @@ package types
 import (
 	"fmt"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 // A Package describes a Go package.

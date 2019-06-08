@@ -13,7 +13,7 @@ import (
 	"os"
 	"reflect"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 // A FieldFilter may be provided to Fprint to control the output.

@@ -8,7 +8,7 @@
 package types
 
 import (
-	"github.com/albrow/fo/constant"
+	"github.com/qProust/fo/constant"
 )
 
 // Conversion type-checks the conversion T(x).

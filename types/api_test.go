@@ -13,13 +13,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/internal/testenv"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/internal/testenv"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 
-	. "github.com/albrow/fo/types"
+	. "github.com/qProust/fo/types"
 )
 
 func pkgFor(path, source string, info *Info) (*Package, error) {

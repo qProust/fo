@@ -8,8 +8,8 @@ package scanner_test
 import (
 	"fmt"
 
-	"github.com/albrow/fo/scanner"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/scanner"
+	"github.com/qProust/fo/token"
 )
 
 func ExampleScanner_Scan() {

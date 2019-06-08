@@ -11,9 +11,9 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/constant"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/constant"
+	"github.com/qProust/fo/token"
 )
 
 func (check *Checker) funcBody(decl *declInfo, name string, sig *Signature, genSig *GenericSignature, body *ast.BlockStmt) {

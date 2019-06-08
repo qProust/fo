@@ -13,8 +13,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 )
 
 const testfile = "format_test.go"
@@ -79,7 +79,7 @@ func TestSource(t *testing.T) {
 // The formatted result must look the same as the input for successful tests.
 var tests = []string{
 	// declaration lists
-	`import "github.com/albrow/fo/format"`,
+	`import "github.com/qProust/fo/format"`,
 	"var x int",
 	"var x int\n\ntype T struct{}",
 

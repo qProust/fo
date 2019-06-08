@@ -10,9 +10,9 @@ package types
 import (
 	"bytes"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/constant"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/constant"
+	"github.com/qProust/fo/token"
 )
 
 // An operandMode specifies the (addressing) mode of an operand.

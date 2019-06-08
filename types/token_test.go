@@ -11,7 +11,7 @@ package types
 import (
 	"testing"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 var assignOps = map[token.Token]token.Token{

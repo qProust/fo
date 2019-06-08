@@ -6,12 +6,12 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/astclone"
-	"github.com/albrow/fo/astutil"
-	"github.com/albrow/fo/printer"
-	"github.com/albrow/fo/token"
-	"github.com/albrow/fo/types"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/astclone"
+	"github.com/qProust/fo/astutil"
+	"github.com/qProust/fo/printer"
+	"github.com/qProust/fo/token"
+	"github.com/qProust/fo/types"
 )
 
 // TODO(albrow): Implement transform.Package for operating on all files in a

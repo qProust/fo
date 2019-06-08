@@ -9,7 +9,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 var src = readFile("parser.go")

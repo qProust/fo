@@ -14,9 +14,9 @@ import (
 	"sort"
 	"testing"
 
-	. "github.com/albrow/fo/ast"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	. "github.com/qProust/fo/ast"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 )
 
 const src = `
@@ -29,8 +29,8 @@ package p /* the name is p */
 import (
 	"bytes"     // bytes
 	"fmt"       // fmt
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/parser"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/parser"
 )
 
 // T

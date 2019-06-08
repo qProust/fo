@@ -1,7 +1,8 @@
 // Copyright 2016 The Go Authors. All rights reserved.
-// Modified work copyright 2018 Alex Browne. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
+
+// This file is a copy of $GOROOT/src/go/internal/gcimporter/testdata/versions.test.go.
 
 // To create a test case for a new export format version,
 // build this package with the latest compiler and store
@@ -12,7 +13,10 @@
 //
 // go build -o test_go1.$X_$Y.a test.go
 //
-// with $X = Go version and $Y = export format version.
+// with $X = Go version and $Y = export format version
+// (add 'b' or 'i' to distinguish between binary and
+// indexed format starting with 1.11 as long as both
+// formats are supported).
 //
 // Make sure this source is extended such that it exercises
 // whatever export format change has taken place.

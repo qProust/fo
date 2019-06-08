@@ -10,8 +10,8 @@ package types
 import (
 	"strings"
 
-	"github.com/albrow/fo/constant"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/constant"
+	"github.com/qProust/fo/token"
 )
 
 var (

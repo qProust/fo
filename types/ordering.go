@@ -10,7 +10,7 @@ package types
 import (
 	"sort"
 
-	"github.com/albrow/fo/ast"
+	"github.com/qProust/fo/ast"
 )
 
 // resolveOrder computes the order in which package-level objects

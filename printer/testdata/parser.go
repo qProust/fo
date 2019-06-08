@@ -12,11 +12,11 @@ package parser
 import (
 	"fmt"
 
-	"github.com/albrow/fo/scanner"
+	"github.com/qProust/fo/scanner"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 
-	"github.com/albrow/fo/ast"
+	"github.com/qProust/fo/ast"
 )
 
 // The mode parameter to the Parse* functions is a set of flags (or 0).

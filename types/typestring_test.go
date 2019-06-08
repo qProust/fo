@@ -8,13 +8,13 @@ package types_test
 import (
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/internal/testenv"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/internal/testenv"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 
-	. "github.com/albrow/fo/types"
+	. "github.com/qProust/fo/types"
 )
 
 const filename = "<src>"
@@ -148,10 +148,10 @@ func TestIncompleteInterfaces(t *testing.T) {
 	}{
 		{new(Interface), "interface{/* incomplete */}"},
 		{new(Interface).Complete(), "interface{}"},
-		{NewInterface(nil, nil), "interface{/* incomplete */}"},
-		{NewInterface(nil, nil).Complete(), "interface{}"},
-		{NewInterface([]*Func{NewFunc(token.NoPos, nil, "m", sig)}, nil), "interface{m() /* incomplete */}"},
-		{NewInterface([]*Func{NewFunc(token.NoPos, nil, "m", sig)}, nil).Complete(), "interface{m()}"},
+		{NewInterface2(nil, nil), "interface{/* incomplete */}"},
+		{NewInterface2(nil, nil).Complete(), "interface{}"},
+		{NewInterface2([]*Func{NewFunc(token.NoPos, nil, "m", sig)}, nil), "interface{m() /* incomplete */}"},
+		{NewInterface2([]*Func{NewFunc(token.NoPos, nil, "m", sig)}, nil).Complete(), "interface{m()}"},
 	} {
 		got := test.typ.String()
 		if got != test.want {

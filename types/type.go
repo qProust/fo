@@ -383,7 +383,7 @@ func (pgs *PartialGenericSignature) TypeMap() map[string]Type {
 // An Interface represents an interface type.
 type Interface struct {
 	methods   []*Func  // ordered list of explicitly declared methods
-	embeddeds []*Named // ordered list of explicitly embedded types
+	embeddeds []Type   // ordered list of explicitly embedded types
 
 	allMethods []*Func // ordered list of methods declared with or embedded in this interface (TODO(gri): replace with mset)
 }
@@ -398,6 +398,21 @@ var markComplete = make([]*Func, 0)
 // NewInterface returns a new (incomplete) interface for the given methods and embedded types.
 // To compute the method set of the interface, Complete must be called.
 func NewInterface(methods []*Func, embeddeds []*Named) *Interface {
+	var tnames []Type
+	if len(embeddeds) > 0 {
+		tnames := make([]Type, len(embeddeds))
+		for i, t := range embeddeds {
+			tnames[i] = t
+		}
+	}
+	return NewInterface2(methods, tnames)
+}
+
+// NewInterface2 returns a new (incomplete) interface for the given methods and embedded types.
+// Each embedded type must have an underlying type of interface type.
+// NewInterface2 takes ownership of the provided methods and may modify their types by setting
+// missing receivers. To compute the method set of the interface, Complete must be called.
+func NewInterface2(methods []*Func, embeddeds []Type) *Interface {
 	typ := new(Interface)
 
 	if len(methods) == 0 && len(embeddeds) == 0 {
@@ -416,14 +431,57 @@ func NewInterface(methods []*Func, embeddeds []*Named) *Interface {
 	}
 	sort.Sort(byUniqueMethodName(methods))
 
-	if embeddeds != nil {
-		sort.Sort(byUniqueTypeName(embeddeds))
+	if len(embeddeds) > 0 {
+			for _, t := range embeddeds {
+				if !IsInterface(t) {
+					panic("embedded type is not an interface")
+				}
+			}
+			sort.Stable(byUniqueTypeName(embeddeds))
 	}
 
 	typ.methods = methods
 	typ.embeddeds = embeddeds
 	return typ
 }
+
+func NewInterfaceType(methods []*Func, embeddeds []Type) *Interface {
+	typ := new(Interface)
+
+	if len(methods) == 0 && len(embeddeds) == 0 {
+		return typ
+	}
+
+	var mset objset
+	for _, m := range methods {
+		if mset.insert(m) != nil {
+			panic("multiple methods with the same name")
+		}
+		// set receiver if we don't have one
+		if sig := m.typ.(*Signature); sig.recv == nil {
+			sig.recv = NewVar(m.pos, m.pkg, "", typ)
+		}
+	}
+	sort.Sort(byUniqueMethodName(methods))
+
+	if len(embeddeds) > 0 {
+		// All embedded types should be interfaces; however, defined types
+		// may not yet be fully resolved. Only verify that non-defined types
+		// are interfaces. This matches the behavior of the code before the
+		// fix for #25301 (issue #25596).
+		for _, t := range embeddeds {
+			if _, ok := t.(*Named); !ok && !IsInterface(t) {
+				panic("embedded type is not an interface")
+			}
+		}
+		sort.Stable(byUniqueTypeName(embeddeds))
+	}
+
+	typ.methods = methods
+	typ.embeddeds = embeddeds
+	return typ
+}
+
 
 // NumExplicitMethods returns the number of explicitly declared methods of interface t.
 func (t *Interface) NumExplicitMethods() int { return len(t.methods) }
@@ -435,9 +493,14 @@ func (t *Interface) ExplicitMethod(i int) *Func { return t.methods[i] }
 // NumEmbeddeds returns the number of embedded types in interface t.
 func (t *Interface) NumEmbeddeds() int { return len(t.embeddeds) }
 
-// Embedded returns the i'th embedded type of interface t for 0 <= i < t.NumEmbeddeds().
-// The types are ordered by the corresponding TypeName's unique Id.
-func (t *Interface) Embedded(i int) *Named { return t.embeddeds[i] }
+// Embedded returns the i'th embedded defined (*Named) type of interface t for 0 <= i < t.NumEmbeddeds().
+// The result is nil if the i'th embedded type is not a defined type.
+//
+// Deprecated: Use EmbeddedType which is not restricted to defiend (*Named) types.
+func (t *Interface) Embedded(i int) *Named { tname, _ := t.embeddeds[i].(*Named); return tname }
+
+// EmbeddedType returns the i'th embedded type of interface t for 0 <= i < t.NumEmbeddeds().
+func (t *Interface) EmbeddedType(i int) Type { return t.embeddeds[i] }
 
 // NumMethods returns the total number of methods of interface t.
 func (t *Interface) NumMethods() int { return len(t.allMethods) }

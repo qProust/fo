@@ -8,7 +8,7 @@ package ast
 import (
 	"sort"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 // ----------------------------------------------------------------------------

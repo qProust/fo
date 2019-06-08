@@ -15,8 +15,8 @@ import (
 	"log"
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/parser"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/parser"
 )
 
 var testfile *ast.File

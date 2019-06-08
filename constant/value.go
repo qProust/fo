@@ -22,7 +22,7 @@ import (
 	"sync"
 	"unicode/utf8"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 // Kind specifies the kind of value represented by a Value.

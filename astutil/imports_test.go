@@ -11,10 +11,10 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/format"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/format"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 )
 
 var fset = token.NewFileSet()
@@ -928,7 +928,7 @@ import (
 	"os"
 	"utf8"
 
-	"github.com/albrow/fo/format"
+	"github.com/qProust/fo/format"
 )
 `,
 		out: `package main
@@ -939,7 +939,7 @@ import (
 	"os"
 	"utf8"
 
-	"github.com/albrow/fo/format"
+	"github.com/qProust/fo/format"
 )
 `,
 	},
@@ -955,7 +955,7 @@ import (
 	"os"   // c
 	"utf8" // d
 
-	"github.com/albrow/fo/format" // e
+	"github.com/qProust/fo/format" // e
 )
 `,
 		out: `package main
@@ -967,7 +967,7 @@ import (
 	"os"   // c
 	"utf8" // d
 
-	"github.com/albrow/fo/format" // e
+	"github.com/qProust/fo/format" // e
 )
 `,
 	},

@@ -6,8 +6,8 @@
 package types
 
 import (
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/token"
 )
 
 // labels checks correct label use in body.

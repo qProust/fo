@@ -23,9 +23,9 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/scanner"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/scanner"
+	"github.com/qProust/fo/token"
 )
 
 // The parser structure holds the parser's internal state.

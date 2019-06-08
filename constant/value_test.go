@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 // TODO(gri) expand this test framework

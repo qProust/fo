@@ -8,9 +8,9 @@ package types_test
 import (
 	"testing"
 
-	"github.com/albrow/fo/parser"
+	"github.com/qProust/fo/parser"
 
-	. "github.com/albrow/fo/types"
+	. "github.com/qProust/fo/types"
 )
 
 var testExprs = []testEntry{

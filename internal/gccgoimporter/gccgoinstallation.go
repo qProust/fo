@@ -1,18 +1,19 @@
 // Copyright 2013 The Go Authors. All rights reserved.
-// Modified work copyright 2018 Alex Browne. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
+
+// Except for this comment, this file is a verbatim copy of the file
+// with the same name in $GOROOT/src/go/internal/gccgoimporter.
 
 package gccgoimporter
 
 import (
 	"bufio"
+	"github.com/qProust/fo/types"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
-
-	"github.com/albrow/fo/types"
 )
 
 // Information about a specific installation of gccgo.
@@ -28,8 +29,10 @@ type GccgoInstallation struct {
 }
 
 // Ask the driver at the given path for information for this GccgoInstallation.
-func (inst *GccgoInstallation) InitFromDriver(gccgoPath string) (err error) {
-	cmd := exec.Command(gccgoPath, "-###", "-S", "-x", "go", "-")
+// The given arguments are passed directly to the call of the driver.
+func (inst *GccgoInstallation) InitFromDriver(gccgoPath string, args ...string) (err error) {
+	argv := append([]string{"-###", "-S", "-x", "go", "-"}, args...)
+	cmd := exec.Command(gccgoPath, argv...)
 	stderr, err := cmd.StderrPipe()
 	if err != nil {
 		return
@@ -57,7 +60,8 @@ func (inst *GccgoInstallation) InitFromDriver(gccgoPath string) (err error) {
 		}
 	}
 
-	stdout, err := exec.Command(gccgoPath, "-dumpversion").Output()
+	argv = append([]string{"-dumpversion"}, args...)
+	stdout, err := exec.Command(gccgoPath, argv...).Output()
 	if err != nil {
 		return
 	}

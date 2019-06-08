@@ -24,12 +24,12 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/format"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
-	"github.com/albrow/fo/types"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/format"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
+	"github.com/qProust/fo/types"
 )
 
 // ExampleScope prints the tree of Scopes of a package created from a

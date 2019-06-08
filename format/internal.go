@@ -14,10 +14,10 @@ import (
 	"bytes"
 	"strings"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/printer"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/printer"
+	"github.com/qProust/fo/token"
 )
 
 // parse parses src, which was read from the named file,

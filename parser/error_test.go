@@ -30,8 +30,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/albrow/fo/scanner"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/scanner"
+	"github.com/qProust/fo/token"
 )
 
 const testdata = "testdata"

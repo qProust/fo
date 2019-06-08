@@ -10,7 +10,7 @@ import (
 	"io"
 	"sort"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 // In an ErrorList, an error is represented by an *Error.

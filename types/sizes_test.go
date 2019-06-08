@@ -10,11 +10,11 @@ package types_test
 import (
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
-	"github.com/albrow/fo/types"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
+	"github.com/qProust/fo/types"
 )
 
 // findStructType typechecks src and returns the first struct type encountered.

@@ -16,9 +16,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 )
 
 const (
@@ -372,7 +372,7 @@ func identCount(f *ast.File) int {
 func TestSourcePos(t *testing.T) {
 	const src = `
 package p
-import ( "github.com/albrow/fo/printer"; "math" )
+import ( "github.com/qProust/fo/printer"; "math" )
 const pi = 3.14; var x = 0
 type t struct{ x, y, z int; u, v, w float32 }
 func (t *t) foo(a, b, c int) int {

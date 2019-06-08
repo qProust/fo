@@ -8,8 +8,8 @@ package types
 import (
 	"fmt"
 
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 )
 
 // Eval returns the type and, if constant, the value for the

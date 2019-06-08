@@ -5,15 +5,16 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/format"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
-	"github.com/albrow/fo/transform"
-	"github.com/albrow/fo/types"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/format"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
+	"github.com/qProust/fo/transform"
+	"github.com/qProust/fo/types"
 	"github.com/urfave/cli"
 )
 
@@ -28,6 +29,11 @@ func main() {
 			Usage:  "run a single .fo file",
 			Action: run,
 		},
+		{
+			Name:   "build",
+			Usage:  "build a single .fo file",
+			Action: build,
+		},
 	}
 
 	if err := app.Run(os.Args); err != nil {
@@ -36,24 +42,20 @@ func main() {
 	}
 }
 
-func run(c *cli.Context) error {
-	// Read arguments and open file.
-	if !c.Args().Present() || len(c.Args().Tail()) != 0 {
-		return errors.New("run expects exactly one argument: the name of a Fo file to run")
-	}
-	f, err := os.Open(c.Args().First())
+func buildFile(path string) (string, error) {
+	f, err := os.Open(path)
 	if err != nil {
-		return fmt.Errorf("could not open file: %s", err)
+		return "", fmt.Errorf("could not open file: %s", err)
 	}
 	if !strings.HasSuffix(f.Name(), ".fo") {
-		return fmt.Errorf("%s is not a Fo file (expected '.fo' extension)", f.Name())
+		return "", fmt.Errorf("%s is not a Fo file (expected '.fo' extension)", f.Name())
 	}
 
 	// Parse file.
 	fset := token.NewFileSet()
 	nodes, err := parser.ParseFile(fset, f.Name(), f, 0)
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	// Check types.
@@ -76,14 +78,49 @@ func run(c *cli.Context) error {
 	}
 	transformed, err := trans.File(nodes)
 	if err != nil {
-		return err
+		return "", err
 	}
 	outputName := strings.TrimSuffix(f.Name(), ".fo") + ".go"
 	output, err := os.Create(outputName)
 	if err != nil {
-		return err
+		return "", err
 	}
 	if err := format.Node(output, fset, transformed); err != nil {
+		return "", err
+	}
+	return outputName, nil
+}
+
+func build(c *cli.Context) error {
+	path := "."
+	if c.Args().Present() {
+		path = c.Args().First()
+	}
+	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
+		if !strings.HasSuffix(path, ".fo") {
+			return nil
+		}
+		_, err = buildFile(path)
+		if err != nil {
+			return fmt.Errorf("error in '%s': %s", path, err)
+		}
+		return nil
+	})
+	if err != nil {
+		return fmt.Errorf("failed to walk path: %s", err)
+	}
+
+	return nil
+}
+
+
+func run(c *cli.Context) error {
+	// Read arguments and open file.
+	if !c.Args().Present() || len(c.Args().Tail()) != 0 {
+		return errors.New("run expects exactly one argument: the name of a Fo file to run")
+	}
+	outputName, err := buildFile(c.Args().First())
+	if err != nil {
 		return err
 	}
 

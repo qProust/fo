@@ -5,7 +5,7 @@
 package importgo
 
 import (
-	"github.com/albrow/fo/ast"
+	"github.com/qProust/fo/ast"
 )
 
 type List[T] []T

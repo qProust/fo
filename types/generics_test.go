@@ -3,9 +3,9 @@ package types
 import (
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 )
 
 // TODO(albrow): test multiple packages here where one imports and uses generics

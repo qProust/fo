@@ -5,7 +5,7 @@
 
 // Package srcimporter implements importing directly
 // from source files rather than installed packages.
-package srcimporter // import "github.com/albrow/fo/internal/srcimporter"
+package srcimporter // import "github.com/qProust/fo/internal/srcimporter"
 
 import (
 	"fmt"
@@ -13,10 +13,10 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
-	"github.com/albrow/fo/types"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
+	"github.com/qProust/fo/types"
 )
 
 // An Importer provides the context for importing packages from source code.

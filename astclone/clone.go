@@ -3,7 +3,7 @@ package astclone
 import (
 	"fmt"
 
-	"github.com/albrow/fo/ast"
+	"github.com/qProust/fo/ast"
 )
 
 func Clone(node ast.Node) ast.Node {

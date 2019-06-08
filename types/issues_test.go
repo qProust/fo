@@ -13,12 +13,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/internal/testenv"
-	"github.com/albrow/fo/parser"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/internal/testenv"
+	"github.com/qProust/fo/parser"
 
-	. "github.com/albrow/fo/types"
+	. "github.com/qProust/fo/types"
 )
 
 func TestIssue5770(t *testing.T) {
@@ -220,7 +220,7 @@ func TestIssue13898(t *testing.T) {
 	const src0 = `
 package main
 
-import "github.com/albrow/fo/types"
+import "github.com/qProust/fo/types"
 
 func main() {
 	var info types.Info
@@ -234,8 +234,8 @@ func main() {
 package main
 
 import (
-	"github.com/albrow/fo/types"
-	_ "github.com/albrow/fo/importer"
+	"github.com/qProust/fo/types"
+	_ "github.com/qProust/fo/importer"
 )
 
 func main() {
@@ -251,8 +251,8 @@ func main() {
 package main
 
 import (
-	_ "github.com/albrow/fo/importer"
-	"github.com/albrow/fo/types"
+	_ "github.com/qProust/fo/importer"
+	"github.com/qProust/fo/types"
 )
 
 func main() {

@@ -1,7 +1,7 @@
 package astutil
 
 import (
-	"github.com/albrow/fo/ast"
+	"github.com/qProust/fo/ast"
 )
 
 // Unparen returns e with any enclosing parentheses stripped.

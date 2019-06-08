@@ -10,13 +10,13 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/importer"
-	"github.com/albrow/fo/internal/testenv"
-	"github.com/albrow/fo/parser"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/importer"
+	"github.com/qProust/fo/internal/testenv"
+	"github.com/qProust/fo/parser"
+	"github.com/qProust/fo/token"
 
-	. "github.com/albrow/fo/types"
+	. "github.com/qProust/fo/types"
 )
 
 type resolveTestImporter struct {
@@ -70,7 +70,7 @@ func TestResolveIdents(t *testing.T) {
 		`,
 		`
 		package p
-		import . "github.com/albrow/fo/parser"
+		import . "github.com/qProust/fo/parser"
 		import "sync"
 		func h() Mode { return ImportsOnly }
 		var _, x int = 1, 2

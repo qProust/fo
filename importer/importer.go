@@ -11,12 +11,12 @@ import (
 	"io"
 	"runtime"
 
-	"github.com/albrow/fo/token"
-	"github.com/albrow/fo/types"
+	"github.com/qProust/fo/token"
+	"github.com/qProust/fo/types"
 
-	"github.com/albrow/fo/internal/gccgoimporter"
-	"github.com/albrow/fo/internal/gcimporter"
-	"github.com/albrow/fo/internal/srcimporter"
+	"github.com/qProust/fo/internal/gccgoimporter"
+	"github.com/qProust/fo/internal/gcimporter"
+	"github.com/qProust/fo/internal/srcimporter"
 )
 
 // A Lookup function returns a reader to access package data for

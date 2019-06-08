@@ -9,9 +9,9 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/albrow/fo/ast"
-	"github.com/albrow/fo/constant"
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/ast"
+	"github.com/qProust/fo/constant"
+	"github.com/qProust/fo/token"
 )
 
 // An Object describes a named language entity such as a package,
@@ -231,6 +231,7 @@ func (obj *Var) Anonymous() bool { return obj.anonymous }
 
 // IsField reports whether the variable is a struct field.
 func (obj *Var) IsField() bool { return obj.isField }
+func (obj *Var) Embedded() bool { return false /* FIXME That's an hardcoded placeholder value */ }
 
 func (*Var) isDependency() {} // a variable may be a dependency of an initialization expression
 

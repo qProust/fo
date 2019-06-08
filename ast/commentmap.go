@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/albrow/fo/token"
+	"github.com/qProust/fo/token"
 )
 
 type byPos []*CommentGroup
